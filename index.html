@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>AI Image Editor</h1>
+            <p>Upload an image and tell the AI what changes you want to see.</p>
+        </header>
+        
+        <main>
+            <div id="controls">
+                <label for="image-upload" class="custom-file-upload">
+                    <img src="./upload-icon.png" alt="Upload Icon" id="upload-icon">
+                    <span>Choose Image</span>
+                </label>
+                <input type="file" id="image-upload" accept="image/*">
+                <textarea id="prompt-input" placeholder="e.g., 'make the sky purple' or 'add a cat wearing a hat'"></textarea>
+                <button id="edit-button" disabled>Generate Edit</button>
+            </div>
+
+            <div id="image-container">
+                <div class="image-box" id="original-image-box">
+                    <h2>Original</h2>
+                    <div class="image-content">
+                        <img id="original-image" src="" alt="Original Image Preview">
+                        <p id="original-placeholder">Upload an image to see it here</p>
+                    </div>
+                </div>
+                <div class="image-box" id="edited-image-box">
+                    <h2>Edited</h2>
+                     <div class="image-content">
+                        <img id="edited-image" src="" alt="Edited Image Result">
+                        <div id="loader" class="hidden"></div>
+                        <p id="edited-placeholder">Your edited image will appear here</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script type="module" src="script.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
